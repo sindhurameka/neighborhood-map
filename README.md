@@ -20,5 +20,6 @@
    ``` bash
   $> cd /path/to/project-folder
   $> bower install oauth-signature
+  ```
 5. Open localhost:8080 path in your browser.
 
