@@ -110,7 +110,6 @@
        // fuction knock() is called by passing the displayData Array
        knock(displayData);
      }
-
    });
  }
 
@@ -199,7 +198,6 @@
          markPlace(loc, name, url, rating);
        }
      }
-
    };
 
    // This function opens the info window of the marker when a list item is clicked
@@ -241,9 +239,7 @@
          closeInfoWindow();
          infowindow.open(marker.get('map'), marker);
          lastOpenedInfoWindow = infowindow;
-
        }
-
      };
    };
  }
