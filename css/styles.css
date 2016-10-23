@@ -1,68 +1,69 @@
 body {
-    margin: 0;
-    font-family: 'Lato', sans-serif;
+		margin: 0;
+		font-family: 'Lato', sans-serif;
 }
 
-/* styles for the naviagtion bar*/
+/* Styles for the naviagtion bar*/
 .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(0,0,0);
-    overflow-x: hidden;
-    transition: 0.5s;
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: rgb(0, 0, 0);
+		overflow-x: hidden;
+		transition: 0.5s;
 }
 
-
-/*Styles for content in the navigation bar */
-
-.overlay header, a, ul li{
-    padding: 8px;
-    text-decoration: none;
-    font-size: 26px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
+/* Styles for content in the navigation bar */
+.overlay header,
+a, ul li {
+		padding: 8px;
+		text-decoration: none;
+		font-size: 26px;
+		color: #818181;
+		display: block;
+		transition: 0.3s;
 }
 
-.overlay header form input{
-    width: 80%;
-    margin: 1px;
-    padding: 5px;
-    border-radius: 4px;
-    box-sizing: border-box;
+.overlay header form input {
+		width: 80%;
+		margin: 1px;
+		padding: 5px;
+		border-radius: 4px;
+		box-sizing: border-box;
 }
 
-.overlay  ul li:hover, .overlay ul li:focus {
-    color: #f1f1f1;
+.overlay ul li:hover,
+.overlay ul li:focus {
+		color: #f1f1f1;
 }
 
 .overlay .closebtn {
-    top: 5px;
-    position: absolute;
-    right: 10px;
-    font-size: 25px;
+		top: 5px;
+		position: absolute;
+		right: 10px;
+		font-size: 25px;
 }
 
-/*Styles for heading element*/
-#heading{
-	position: absolute;
-    left: 20%;
-    width: 80%;
-    border: 10 10 10 10;
+/* Styles for heading element*/
+#heading {
+		position: absolute;
+		left: 20%;
+		width: 80%;
+		border: 10 10 10 10;
 }
 
-#heading h1{
-	text-align: center;
+#heading h1 {
+		text-align: center;
 }
-/*Styles for displaying map div*/
+
+/* Styles for displaying map div*/
 #myMain {
-	position: absolute;
-    left: 20%;
-    width: 70%;
-    height: 80%;
-	margin: 5% 2% 2% 2%;
+		position: absolute;
+		left: 20%;
+		width: 70%;
+		height: 80%;
+		margin: 5% 2% 2% 2%;
 }
