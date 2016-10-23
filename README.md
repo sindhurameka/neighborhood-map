@@ -15,11 +15,5 @@
   $> cd /path/to/project-folder
   $> python -m SimpleHTTPServer 8080
   ```
-3. Install [bower](https://bower.io/)
-4. Open terminal in the top level of the project folder and install oauth-signature
-   ``` bash
-  $> cd /path/to/project-folder
-  $> bower install oauth-signature
-  ```
-5. Open localhost:8080 path in your browser.
+3. Open localhost:8080 path in your browser.
 
