@@ -1,5 +1,4 @@
 // Global declaration of variables that are used in multiple fuctions
-var map;
 var marker;
 var searchData = [];
 var displayData = [];
@@ -8,7 +7,7 @@ var markers = [];
 var lastOpenedInfoWindow;
 var $errorHandling = $('#myMain');
 
-// This fuction is for responsive design - changes the Navigation bar width based on size of the screen
+// This function is for responsive design - changes the Navigation bar width based on size of the screen
 function openNav() {
 
  if (window.matchMedia("(max-width: 600px)").matches) {
@@ -25,35 +24,42 @@ function openNav() {
 
 // This function is called by navigation list close button
 function closeNav() {
+
  document.getElementById("myNav").style.width = "0%";
 }
 
+// This function is a callback fuction of Google Maps API script
+function mapSuccess(){
+
+ if(typeof google !== 'undefined'){
+    console.log("success");
+    initialize();
+ }else{
+    console.log("error");
+    mapError();
+ }
+}
+
+// This function is called by mapSuccess function if google is defined
 function initialize() {
  map = new google.maps.Map(
-     document.getElementById('myMain'), {
-         center: {
-             lat: 37.562517,
-             lng: -122.31476
-         },
-         zoom: 10
-     });
+        document.getElementById('myMain'), {
+        center: {
+         lat: 37.562517,
+         lng: -122.31476
+        },
+        zoom: 10
+ });
+ loadPlaces();
+}
+
+// This function is called when google Map API cannot be accessed
+function mapError(){
+ $('#myMain').text("GoogleMaps API cannot be connected this time, Please check back later");
 }
 
 // This function is makes Google Maps API call and displays the map on the window also calls getYelpData fuction to get places information
 function loadPlaces() {
-
- var mapUrl = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBlixyNADAI_3QK3UWWEnOqoONV4R9V2vc&' + 'callback=initialize';
-
- var script = document.createElement('script');
- script.type = 'text/javascript';
- script.src = mapUrl;
- document.getElementById('myMain').appendChild(script);
- //check if script was loaded
- script.onload = function() {}
-     //check if it didn't load
- script.onerror = function() {
-     $('#myMain').text("GoogleMaps API cannot be connected, Please check back later");
- }
 
  // The searchTerms array consists of search terms for different categories of places
  var searchTerms = ["coffee", "restaurants", "parks", "museums"];
@@ -66,10 +72,8 @@ function loadPlaces() {
 
 }
 
-// Calling loadPlaces function once the HTML loading is completed
-window.onload = loadPlaces;
-
 function nonce_generate() {
+
  return (Math.floor(Math.random() * 1e12).toString());
 }
 
