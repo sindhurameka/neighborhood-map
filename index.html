@@ -6,15 +6,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Neighborhood Map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript">
-    </script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
     <script src="js/jquery.js"></script>
     <script src="js/knockout-3.4.0.js"></script>
-    <script src='http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js'>
-    </script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/1.2.1/knockout-min.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src='http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js'></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/1.2.1/knockout-min.js"></script>
     <script src="/bower_components/oauth-signature/oauth-signature.js"></script>
     <script src="js/app.js"></script>
 </head>
@@ -32,7 +29,7 @@
             <ul data-bind="template: {name:'place', foreach:places}"> </ul>
         </div>
         <script data-proofer-ignore type="text/html" id="place">
-            <li data-bind="text: name, click: showMeTheMarker"></li>
+        <li data-bind="text: name, click: showMeTheMarker"></li>
         </script>
     </div>
 
@@ -45,50 +42,7 @@
     <span style="font-size:25px;cursor:pointer;padding-left:10px;" onclick="openNav()">&#9776;</span>
 
     <!-- Displays the Map  -->
-    <div id="myMain">
-        <script>
-            // Initalizes and show the map in myMain div element
-            var map;
-            var marker;
-
-            function initMap() {
-                map = new google.maps.Map(document.getElementById('myMain'), {
-                    center: {
-                        lat: 37.562517,
-                        lng: -122.31476
-                    },
-                    zoom: 10
-                });
-            }
-        </script>
-        <!-- Calls the google Maps API -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlixyNADAI_3QK3UWWEnOqoONV4R9V2vc&callback=initMap" async defer></script>
-    </div>
-
-    <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-1.12.4.min.js"><\/script>')
-    </script>
-
-    <!-- Responsive design - changes the Navigation bar width based on size of the screen -->
-    <script>
-        function openNav() {
-
-            if (window.matchMedia("(max-width: 600px)").matches) {
-                /* the viewport is less than 400 pixels wide */
-                document.getElementById("myNav").style.width = "90%";
-            } else if (window.matchMedia("(min-width: 601px)").matches && window.matchMedia("(max-width: 780px)").matches) {
-                /* the viewport is more than 600 and less than 781 pixels wide */
-                document.getElementById("myNav").style.width = "50%";
-            } else {
-                /* the viewport is more than 780 pixels wide */
-                document.getElementById("myNav").style.width = "20%";
-            }
-        }
-
-        function closeNav() {
-            document.getElementById("myNav").style.width = "0%";
-        }
-    </script>
+    <div id="myMain"></div>
 </body>
 
 </html>
